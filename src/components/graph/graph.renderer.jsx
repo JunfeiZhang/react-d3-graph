@@ -35,13 +35,14 @@ function _renderLinks(nodes, links, linksMatrix, config, linkCallbacks, highligh
     }
 
     return outLinks.map(link => {
-        const { source, target } = link;
+        const { source, target, label } = link;
         // FIXME: solve this source data inconsistency later
         const sourceId = source.id !== undefined && source.id !== null ? source.id : source;
         const targetId = target.id !== undefined && target.id !== null ? target.id : target;
         const key = `${sourceId}${CONST.COORDS_SEPARATOR}${targetId}`;
         const props = buildLinkProps(
             { ...link, source: `${sourceId}`, target: `${targetId}` },
+            label,
             nodes,
             linksMatrix,
             config,
