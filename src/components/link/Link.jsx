@@ -73,7 +73,6 @@ export default class Link extends React.Component {
         };
 
         const lineProps = {
-            label: this.props.label,
             className: this.props.className,
             d: this.props.d,
             onClick: this.handleOnClickLink,
